@@ -1,3 +1,4 @@
+
 (function($){
 	$(document).ready( function(){
 		var user_agent = navigator.userAgent;
