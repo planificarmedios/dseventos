@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="https://www.w3.org/1999/xhtml"> 
 <head> 
 <title>IIS 7.5 Detailed Error - 404.3 - Not Found</title> 
 <style type="text/css"> 
@@ -70,7 +70,7 @@ table tr.alt td,table tr.alt th{background-color:#ebebeb;}
   </div> 
   <div id="details-right"> 
    <table border="0" cellpadding="0" cellspacing="0"> 
-    <tr class="alt"><th>Requested URL</th><td>http://dseventosdeportivos.com.ar:80/wp-content/themes/Divi/core/admin/fonts/modules.woff</td></tr> 
+    <tr class="alt"><th>Requested URL</th><td>https://dseventosdeportivos.com.ar:80/wp-content/themes/Divi/core/admin/fonts/modules.woff</td></tr> 
     <tr><th>Physical Path</th><td>\\hmfsw\web\DTCWIN014\wi142376.ferozo.com\public_html\wp-content\themes\Divi\core\admin\fonts\modules.woff</td></tr> 
     <tr class="alt"><th>Logon Method</th><td>Anonymous</td></tr> 
     <tr><th>Logon User</th><td>Anonymous</td></tr> 
@@ -87,7 +87,7 @@ table tr.alt td,table tr.alt th{background-color:#ebebeb;}
 </div> 
 <div class="content-container"> 
  <fieldset><legend>Things you can try:</legend> 
-  <ul> 	<li>In system.webServer/handlers:           <ul> 			<li>Ensure that the expected handler for the current page is mapped.</li> 			<li>Pay extra attention to preconditions (for example, runtimeVersion, pipelineMode, bitness) and compare them to the settings for your application pool.</li> 			<li>Pay extra attention to typographical errors in the expected handler line.</li> 		</ul> 	</li> 	<li>Please verify that the feature you are trying to use is installed.</li> 	<li>           Verify that the MIME map is enabled or add the MIME map for the Web site using the command-line tool appcmd.exe.           <ol> 			<li>To set a MIME type, use the following syntax: %SystemRoot%\windows\system32\inetsrv\appcmd set config /section:staticContent /+[fileExtension='string',mimeType='string']</li> 			<li>The variable fileExtension string is the file name extension and the variable mimeType string is the file type description.</li> 			<li>For example, to add a MIME map for a file which has the extension ".xyz": appcmd set config /section:staticContent /+[fileExtension='.xyz',mimeType='text/plain']</li> 		</ol>           Warning: Ensure that this MIME mapping is needed for your Web server before adding it to the list. Configuration files such as .CONFIG or dynamic scripting pages such as .ASP or .ASPX, should not be downloaded directly and should always be processed through a handler. Other files such as database files or those used to store configuration, like .XML or .MDF, are sometimes used to store configuration information. Determine if clients can download these file types before enabling them.         </li> 	<li>Install ASP.NET.</li> 	<li>Create a tracing rule to track failed requests for this HTTP status code. For more information about creating a tracing rule for failed requests, click <a href="http://go.microsoft.com/fwlink/?LinkID=66439">here</a>. </li> </ul> 
+  <ul> 	<li>In system.webServer/handlers:           <ul> 			<li>Ensure that the expected handler for the current page is mapped.</li> 			<li>Pay extra attention to preconditions (for example, runtimeVersion, pipelineMode, bitness) and compare them to the settings for your application pool.</li> 			<li>Pay extra attention to typographical errors in the expected handler line.</li> 		</ul> 	</li> 	<li>Please verify that the feature you are trying to use is installed.</li> 	<li>           Verify that the MIME map is enabled or add the MIME map for the Web site using the command-line tool appcmd.exe.           <ol> 			<li>To set a MIME type, use the following syntax: %SystemRoot%\windows\system32\inetsrv\appcmd set config /section:staticContent /+[fileExtension='string',mimeType='string']</li> 			<li>The variable fileExtension string is the file name extension and the variable mimeType string is the file type description.</li> 			<li>For example, to add a MIME map for a file which has the extension ".xyz": appcmd set config /section:staticContent /+[fileExtension='.xyz',mimeType='text/plain']</li> 		</ol>           Warning: Ensure that this MIME mapping is needed for your Web server before adding it to the list. Configuration files such as .CONFIG or dynamic scripting pages such as .ASP or .ASPX, should not be downloaded directly and should always be processed through a handler. Other files such as database files or those used to store configuration, like .XML or .MDF, are sometimes used to store configuration information. Determine if clients can download these file types before enabling them.         </li> 	<li>Install ASP.NET.</li> 	<li>Create a tracing rule to track failed requests for this HTTP status code. For more information about creating a tracing rule for failed requests, click <a href="https://go.microsoft.com/fwlink/?LinkID=66439">here</a>. </li> </ul> 
  </fieldset> 
 </div> 
  
@@ -95,7 +95,7 @@ table tr.alt td,table tr.alt th{background-color:#ebebeb;}
 <div class="content-container"> 
  <fieldset><legend>Links and More Information</legend> 
   This error occurs when the file extension of the requested URL is for a MIME type that is not configured on the server. You can add a MIME type for the file extension for files that are not dynamic scripting pages, database, or configuration files. Process those file types using a handler. You should not allows direct downloads of dynamic scripting pages, database or configuration files. 
-  <p><a href="http://go.microsoft.com/fwlink/?LinkID=62293&amp;IIS70Error=404,3,0x80070032,7601">View more information &raquo;</a></p> 
+  <p><a href="https://go.microsoft.com/fwlink/?LinkID=62293&amp;IIS70Error=404,3,0x80070032,7601">View more information &raquo;</a></p> 
    
  </fieldset> 
 </div> 
