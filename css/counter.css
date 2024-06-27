@@ -1,0 +1,39 @@
+.counter h1 {
+        font-weight: normal;
+        letter-spacing: .125rem;
+        text-transform: uppercase;
+}
+
+.counter li {
+        display: inline-block;
+        font-size: 1em;
+        list-style-type: none;
+        padding: .61em;
+        text-transform: uppercase;
+}
+
+.counter li span {
+        display: block;
+        font-size: 1.3rem;
+        font-weight: bold;
+}
+
+.counter .emoji {
+        display: none;
+        padding: 1rem;
+}
+
+
+@media all and (max-width: 768px) {
+        .counter h1 {
+                font-size: calc(1.5rem * var(--smaller));
+        }
+
+        .counter li {
+                font-size: calc(1.125rem * var(--smaller));
+        }
+
+        .counter li span {
+                font-size: calc(3.375rem * var(--smaller));
+        }
+}
