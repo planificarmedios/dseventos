@@ -29,8 +29,7 @@
     }
   </script>
   <title>
-    Inicio | Organización de Eventos Deportivos en Mar del Plata - DS Eventos
-    Deportivos
+    Inicio | Organización de Eventos Deportivos en Mar del Plata - DS Eventos Deportivos
   </title>
 
   <!-- This site is optimized with the Yoast SEO plugin v13.2 - https://yoast.com/wordpress/plugins/seo/ -->
@@ -52,120 +51,109 @@
 
   <link rel="dns-prefetch" href="//fonts.googleapis.com" />
   <link rel="dns-prefetch" href="//s.w.org" />
-  <!-- <script type="text/javascript">
-    window._wpemojiSettings = {
-      baseUrl: "https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/",
-      ext: ".png",
-      svgUrl: "https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/",
-      svgExt: ".svg",
-      source: {
-        concatemoji:
-          "https:\/\/dseventosdeportivos.com.ar\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.3.8",
-      },
-    };
-    !(function (e, a, t) {
-      var n,
-        r,
-        o,
-        i = a.createElement("canvas"),
-        p = i.getContext && i.getContext("2d");
-
-      function s(e, t) {
-        var a = String.fromCharCode;
-        p.clearRect(0, 0, i.width, i.height),
-          p.fillText(a.apply(this, e), 0, 0);
-        e = i.toDataURL();
-        return (
-          p.clearRect(0, 0, i.width, i.height),
-          p.fillText(a.apply(this, t), 0, 0),
-          e === i.toDataURL()
-        );
-      }
-
-      function c(e) {
-        var t = a.createElement("script");
-        (t.src = e),
-          (t.defer = t.type = "text/javascript"),
-          a.getElementsByTagName("head")[0].appendChild(t);
-      }
-      for (
-        o = Array("flag", "emoji"),
-        t.supports = {
-          everything: !0,
-          everythingExceptFlag: !0,
-        },
-        r = 0;
-        r < o.length;
-        r++
-      )
-        (t.supports[o[r]] = (function (e) {
-          if (!p || !p.fillText) return !1;
-          switch (
-          ((p.textBaseline = "top"), (p.font = "600 32px Arial"), e)
-          ) {
-            case "flag":
-              return s(
-                [127987, 65039, 8205, 9895, 65039],
-                [127987, 65039, 8203, 9895, 65039]
-              )
-                ? !1
-                : !s(
-                  [55356, 56826, 55356, 56819],
-                  [55356, 56826, 8203, 55356, 56819]
-                ) &&
-                !s(
-                  [
-                    55356, 57332, 56128, 56423, 56128, 56418, 56128,
-                    56421, 56128, 56430, 56128, 56423, 56128, 56447,
-                  ],
-                  [
-                    55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418,
-                    8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128,
-                    56423, 8203, 56128, 56447,
-                  ]
-                );
-            case "emoji":
-              return !s(
-                [
-                  55357, 56424, 55356, 57342, 8205, 55358, 56605, 8205, 55357,
-                  56424, 55356, 57340,
-                ],
-                [
-                  55357, 56424, 55356, 57342, 8203, 55358, 56605, 8203, 55357,
-                  56424, 55356, 57340,
-                ]
-              );
-          }
-          return !1;
-        })(o[r])),
-          (t.supports.everything = t.supports.everything && t.supports[o[r]]),
-          "flag" !== o[r] &&
-          (t.supports.everythingExceptFlag =
-            t.supports.everythingExceptFlag && t.supports[o[r]]);
-      (t.supports.everythingExceptFlag =
-        t.supports.everythingExceptFlag && !t.supports.flag),
-        (t.DOMReady = !1),
-        (t.readyCallback = function () {
-          t.DOMReady = !0;
-        }),
-        t.supports.everything ||
-        ((n = function () {
-          t.readyCallback();
-        }),
-          a.addEventListener
-            ? (a.addEventListener("DOMContentLoaded", n, !1),
-              e.addEventListener("load", n, !1))
-            : (e.attachEvent("onload", n),
-              a.attachEvent("onreadystatechange", function () {
-                "complete" === a.readyState && t.readyCallback();
-              })),
-          (n = t.source || {}).concatemoji
-            ? c(n.concatemoji)
-            : n.wpemoji && n.twemoji && (c(n.twemoji), c(n.wpemoji)));
-    })(window, document, window._wpemojiSettings);
-  </script> -->
   <meta content="Divi - HGImagen v.1.0.0" name="generator" />
+
   <style type="text/css">
+
+    /* <!-- / carrusel. --> */
+
+    #carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    scroll-snap-type: x mandatory;
+    padding: 10px;
+  }
+
+  .carousel-img {
+    height: 150px;
+    cursor: pointer;
+    scroll-snap-align: start;
+    border-radius: 8px;
+    transition: transform 0.2s;
+  }
+
+  .carousel-img:hover {
+    transform: scale(1.05);
+  }
+
+  #lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    flex-direction: column;
+  }
+
+  #lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+  }
+
+  #lightbox.active {
+    display: flex;
+  }
+
+  #close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+    z-index: 1001;
+  }
+
+  #close-btn:hover {
+    background-color: #ddd;
+  }
+
+
+    /* <!-- / carrusel. --> */
+
+
+    .enlace-doc {
+        color: #282928;
+        text-decoration: none;
+        transition: color 0.3s, text-shadow 0.3s;
+    }
+
+        .enlace-doc:hover {
+        color: #084570;
+        text-shadow: 0 0 5px rgba(106, 97, 187, 0.6);
+    }
+    
+    .boton-info {
+        display: inline-block;
+        background-color: rgb(113, 112, 111);
+        color: white;
+        border: 3px solid white;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+        }
+
+        .boton-info:hover {
+        background-color: white;
+        color: rgb(113, 112, 111);
+        }
     img.wp-smiley,
     img.emoji {
       display: inline !important;
@@ -462,29 +450,18 @@
       <article id="post-9" class="post-9 page type-page status-publish hentry">
         <div class="entry-content">
           <div id="et-boc" class="et-boc">
+
             <div class="et_builder_inner_content et_pb_gutters3">
               <div class="et_pb_section et_pb_section_0 et_pb_with_background et_section_regular">
                 <div style="height: 240px">
-                  <!-- <div
-										class="et_pb_column et_pb_column_4_4 et_pb_column_0     et-last-child">
-
-
-										<div
-											class="et_pb_module et_pb_text et_pb_text_0   et_pb_bg_layout_dark   ">
-
-
-											<div class="et_pb_text_inner">
-												<p>&#8211; DS &#8211; </p>
-											</div>
-										</div>
-									</div> -->
+            
                 </div>
                 <div class="et_pb_row et_pb_row_1">
                   <div
                     class="et_pb_column et_pb_column_4_4 et_pb_column_1 et_pb_css_mix_blend_mode_passthrough et-last-child">
-                    <div class="et_pb_module et_pb_divider et_pb_divider_0 et_pb_divider_position_ et_pb_space">
+                  <!--   <div class="et_pb_module et_pb_divider et_pb_divider_0 et_pb_divider_position_ et_pb_space">
                       <div class="et_pb_divider_internal"></div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 <div class="et_pb_row et_pb_row_2">
@@ -529,11 +506,13 @@
                       class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_0 clearfix et_pb_bg_layout_dark has_follow_button">
                       <li
                         class="et_pb_social_media_follow_network_0 et_pb_social_icon et_pb_social_network_link et-social-facebook et_pb_social_media_follow_network_0">
-                        <a href="https://www.facebook.com/pg/dseventosdeportivos/about/?ref=page_internal"
+                       <!--  <a href="https://www.facebook.com/pg/dseventosdeportivos/about/?ref=page_internal"
                           class="icon et_pb_with_border" title="Follow on Facebook" target="_blank"><span
                             class="et_pb_social_media_follow_network_name" aria-hidden="true">Seguir</span></a><a
                           href="https://www.facebook.com/pg/dseventosdeportivos/about/?ref=page_internal"
-                          class="follow_button" title="Facebook" target="_blank">Seguir</a>
+                          class="follow_button" title="Facebook" target="_blank">
+                          Seguir
+                        </a> -->
                       </li>
                       <!-- <li
                         class="et_pb_social_media_follow_network_1 et_pb_social_icon et_pb_social_network_link et-social-instagram et_pb_social_media_follow_network_1">
@@ -561,6 +540,8 @@
                   </div>
                 </div>
               </div>
+
+              <!--
               <div class="video-intro-container video-1">
 
                 <video src="./galeria/bristol.mp4" autoplay loop muted controls></video>
@@ -571,165 +552,216 @@
                 <video src="./galeria/premium.mp4" autoplay loop muted controls></video>
 
               </div>
-              <div id="calendario" class="et_pb_section et_pb_section_1 et_hover_enabled et_section_regular a">
+              -->
+
+            </br>              
+
+<!-- .nuevo div con video copa bristol -->
+
+<div id="premium" class="feature fadeIn fadeInC" style="opacity: 1;">
+  <div>
+    <div>
+      <div class="et_pb_module et_pb_text et_pb_text_10 et_hover_enabled et_pb_bg_layout_dark et_pb_text_align_left evento et_had_animation mt-2" 
+      style="padding: 10px 0px; margin: 0px; 
+      background: linear-gradient(to right, 
+        #25770e 0%,
+        #2f711b 30%,
+        #3a7729 60%,
+        rgba(0, 0, 0, 0) 100%);">
+
+        <div class="et_pb_text_inner center-text" style="max-width: 600px; margin: 0 auto;">
+         
+
+          <h2>Sub 8 a Sub 18 <br></h2>
+          <h3>Sábado <strong>29</strong> y Domingo <strong>30</strong> de Noviembre</h3>
+
+          <div class="counter" style="margin: 10px 0;">
+            <div id="countdown1">
+              <ul style="list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 10px; font-size: 0.9rem;">
+                <li><span id="days1">194</span> días</li>
+                <li><span id="hours1">8</span> horas</li>
+                <li><span id="minutes1">31</span> minutos</li>
+                <li><span id="seconds1">7</span> segundos</li>
+              </ul>
+            </div>
+          </div>
+
+          <img loading="lazy" class="alignnone size-medium wp-image-283" src="images/copabristol-logo.png" alt="Logo Copa Bristol" width="300" height="170" sizes="(max-width: 360px) 100vw, 300px">
+
+                <a href="#inscripcion" class="boton-info">MÁS INFO</a>
+        </div>
+    </div>
+
+      
+    </div>
+  </div>
+
+  <div class="imagenes fadeLeft fadeRC" style="opacity: 1;">
+    <video src="galeria/bristol.mp4" autoplay="" loop="" muted="" controls="" style="margin-left: 100px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); border-radius: 10px;"></video>
+  </div>
+</div>
+
+<div id="inscripcion" class="et_pb_section et_pb_section_1 et_hover_enabled et_section_regular a">
                 <div id="proximos" class="et_pb_row et_pb_row_7">
-                  <div
-                    class="et_pb_column et_pb_column_4_4 et_pb_column_10 et_pb_css_mix_blend_mode_passthrough et-last-child">
+                  <div class="et_pb_column et_pb_column_4_4 et_pb_column_10 et_pb_css_mix_blend_mode_passthrough et-last-child">
                     <div class="et_pb_module et_pb_text et_pb_text_8 et_pb_bg_layout_light et_pb_text_align_right">
                       <div class="et_pb_text_inner">
-                        <h2 style="text-align: center">Calendario 2025</h2>
-                        <p>&nbsp;</p>
+                        <h2 style="text-align: center">SEVEN HOCKEY COPA BRISTOL MAR DEL PLATA</h2>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div id="eventos" class="et_pb_row et_pb_row_8 et_pb_gutters1">
-                  <!-- <div class="et_pb_column et_pb_column_1_4 et_pb_column_11 et_pb_css_mix_blend_mode_passthrough">
-                    <div
-                      class="et_pb_module et_pb_text et_pb_text_9 et_animated et_hover_enabled et_pb_bg_layout_dark et_pb_text_align_left">
+</div>
+
+<div class="et_pb_section et_pb_section_2 et_hover_enabled et_pb_with_background et_section_regular">
+                <div class="et_pb_row et_pb_row_6">
+                  <div class="et_pb_column et_pb_column_1_2 et_pb_column_8 et_pb_css_mix_blend_mode_passthrough">
+                    <div class="et_pb_module et_pb_text et_pb_text_6 et_pb_bg_layout_light et_pb_text_align_left">
                       <div class="et_pb_text_inner">
-                        <h3>Torneo Hockey / Fútbol Convivencia</h3>
-                        <p>Nivel escolar, mujeres y varones</p>
-                        <p>
-                          Viernes <b>15</b> y Sábado <b>16</b> de Septiembre.
-                        </p>
+                        <ul>
+                          <li>
+                                <a href="docs/reglamento.pdf" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    class="enlace-doc">
+                                    Reglamento del Torneo
+                                </a>
+                          </li>
+                        </br>
+                          <li>
+                                <a href="docs/categorias.pdf" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    class="enlace-doc">
+                                    Categorías
+                                </a>
+                            </li>
+                         </br>
+                          <li>
+                                <a href="docs/programa.pdf" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    class="enlace-doc">
+                                    Cronograma de actividades
+                                </a>
+                            </li>
+                        </ul>
+                      </div>
+                    </div>
+                  
+                  </div>
+                  <div class="et_pb_column et_pb_column_1_2 et_pb_column_9 et_pb_css_mix_blend_mode_passthrough">
+                    <div class="et_pb_module et_pb_text et_pb_text_7 et_pb_bg_layout_light et_pb_text_align_left">
+                      <div class="et_pb_text_inner">
+                        <ul>
+                                <li>
+                                    <a href="docs/alojamiento.pdf" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer" 
+                                            class="enlace-doc">
+                                            Servicios Incluídos
+                                        </a>
+                                </li>
+                            </br>
+                                <li>
+                                    <a href="docs/clubes-2024.pdf" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer" 
+                                            class="enlace-doc">
+                                            Clubes participantes ediciones anteriores
+                                    </a>
+                                </li>
+                            </br>
+                          
+                            <li>
+                                <a href="docs/hoteleria.pdf" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    class="enlace-doc">
+                                    Hotelería
+                                </a>
+                            </li>
+
+                            </br>
+                          
+                            <li>
+                                <a href="https://www.facebook.com/Sevenhockeycopabristol" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    class="enlace-doc">
+                                    Seguinos 
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
+                                      alt="Facebook"
+                                      style="width: 20px; height: 20px; margin-right: 10px;">
+                                                              </a>
+                            </li>
+
+                        </ul>
+                      </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="carousel" style="
+              display: flex;
+              overflow-x: auto;
+              gap: 10px;
+              scroll-snap-type: x mandatory;
+              margin: 70px 50px 40px 70px; /* top, right, bottom, left */
+              padding: 0 10px; /* agrega espacio a izquierda y derecha */
+            "></div>
+
+            <div id="lightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+              background-color: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 9999;">
+
+              <div style="position: relative; display: inline-block;">
+                <button id="close-btn" style="
+                  position: absolute;
+                  top: -15px;
+                  right: -15px;
+                  font-size: 24px;
+                  color: red;
+                  background: white;
+                  border: 2px solid red;
+                  border-radius: 50%;
+                  cursor: pointer;
+                  width: 30px;
+                  height: 30px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  box-shadow: 0 0 8px rgba(0,0,0,0.6);
+                ">✕</button>
+
+                <img src="" alt="Imagen ampliada" style="max-width: 90vw; max-height: 80vh; border-radius: 12px;" />
+              </div>
+            </div>
+
+
+
+<!-- .nuevo div con video copa bristol -->
+
+
+              <div id="calendario" class="et_pb_section et_pb_section_1 et_hover_enabled et_section_regular a">
+                <div id="proximos" class="et_pb_row et_pb_row_7">
+                  <div class="et_pb_column et_pb_column_4_4 et_pb_column_10 et_pb_css_mix_blend_mode_passthrough et-last-child">
+                    <div class="et_pb_module et_pb_text et_pb_text_8 et_pb_bg_layout_light et_pb_text_align_right">
+                      <div class="et_pb_text_inner">
+                        <h2 style="text-align: center">NUESTROS SERVICIOS:</h2>
                         <p>&nbsp;</p>
-                        <p class="wideParagraph">
-                          <strong><img loading="lazy" class="alignnone size-medium wp-image-276"
-                              src="images/convivencia.png" alt="" width="300" height="186"
-                              sizes="(max-width: 300px) 100vw, 300px" /></strong>
-                        </p>
                       </div>
                     </div>
-                    <ul
-                      class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_1 clearfix et_pb_bg_layout_light et_pb_text_align_center">
-                      <li
-                        class="et_pb_social_media_follow_network_2 et_pb_social_icon et_pb_social_network_link et-social-facebook et_pb_social_media_follow_network_2">
-                        <a href="https://www.facebook.com/MardelCup-F%C3%BAtbol-Femenino-105884984148867/"
-                          class="icon et_pb_with_border" title="Follow on Facebook" target="_blank"><span
-                            class="et_pb_social_media_follow_network_name" aria-hidden="true">Seguir</span></a>
-                      </li>
-                      <li
-                        class="et_pb_social_media_follow_network_3 et_pb_social_icon et_pb_social_network_link et-social-instagram et_pb_social_media_follow_network_3">
-                        <a href="https://www.instagram.com/mardelcupfutbolfemenino/?hl=es-la"
-                          class="icon et_pb_with_border" title="Follow on Instagram" target="_blank"><span
-                            class="et_pb_social_media_follow_network_name" aria-hidden="true">Seguir</span></a>
-                      </li>
-                    </ul>
-                  </div> -->
-                  <!-- et_pb_column et_pb_column_1_3 para 3 cols et_pb_column et_pb_column_1_4 para 4 cols -->
-                  <div class="et_pb_column et_pb_column_1_3 et_pb_column_12 et_pb_css_mix_blend_mode_passthrough ">
-                    <div
-                      class="et_pb_module et_pb_text et_pb_text_10 et_animated et_hover_enabled et_pb_bg_layout_dark et_pb_text_align_left evento">
-                      <div class="et_pb_text_inner center-text">
-                        <h3>Seven Hockey Copa Bristol Mar del Plata </h3>
-                        <p>
-                          Sub 8 a Sub 18 <br />
-                          <br />
-                          Sábado <strong>29</strong> y Domingo
-                          <strong>30</strong> de Noviembre<br />
-                        </p>
-
-                        <div class="counter">
-                          <div id="countdown1">
-                            <ul>
-                              <li><span id="days1"></span>dias</li>
-                              <li><span id="hours1"></span>horas</li>
-                              <li><span id="minutes1"></span>minutos</li>
-                              <li><span id="seconds1"></span>segundos</li>
-                            </ul>
-                          </div>
-                        </div>
-
-
-                        <p>
-                          <img loading="lazy" style="width: 400px" class="alignnone size-medium wp-image-283"
-                            src="images/copabristol-logo.png" alt="" width="320" height="168"
-                            sizes="(max-width: 360px) 100vw, 360px" />
-                        </p>
-                      </div>
-                    </div>
-
-                    <!-- .et_pb_counters -->
-                  </div>
-                  <div class="et_pb_column et_pb_column_1_3 et_pb_column_13 et_pb_css_mix_blend_mode_passthrough ">
-                    <div
-                      class="et_pb_module et_pb_text et_pb_text_11 et_animated et_hover_enabled et_pb_bg_layout_dark et_pb_text_align_left evento">
-                      <div class="et_pb_text_inner center-text">
-                        <h3>Mar del Cup <br> Futbol Femenino</h3>
-                        <p>
-                          <br />
-                          Viernes <strong>5</strong>  y Sábado
-                          <strong>6</strong> de Diciembre
-                          <br />
-                        </p>
-                        <div class="counter">
-                          <div id="countdown2">
-                            <ul>
-                              <li><span id="days2"></span>dias</li>
-                              <li><span id="hours2"></span>horas</li>
-                              <li><span id="minutes2"></span>minutos</li>
-                              <li><span id="seconds2"></span>segundos</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <p class="wideParagraph" style="padding-top: .3rem">
-                          <img loading="lazy" style="width: 470px" class="alignnone size-medium wp-image-283"
-                            src="images/mardelcup-logo.png" alt="" width="360" height="168"
-                            sizes="(max-width: 360px) 100vw, 360px" />
-                        </p>
-                      </div>
-                    </div>
-
-                    <!-- .et_pb_counters -->
-                  </div>
-                  <div class="et_pb_column et_pb_column_1_3 et_pb_column_14 et_pb_css_mix_blend_mode_passthrough ">
-                    <div
-                      class="et_pb_module et_pb_text et_pb_text_12 et_animated et_hover_enabled et_pb_bg_layout_dark et_pb_text_align_left evento">
-                      <div class="et_pb_text_inner center-text">
-                        <h3 style="width: 103%">
-                          Premium Cup <br> MAMIS HOCKEY
-                        </h3>
-                        <p>
-                          <br />
-                          Viernes <strong>5</strong>  y Sábado
-                          <strong>6</strong> de Diciembre
-                          <br />
-                        </p>
-
-                        <div class="counter">
-                          <div id="countdown2">
-                            <ul>
-                              <li><span id="days3"></span>dias</li>
-                              <li><span id="hours3"></span>horas</li>
-                              <li><span id="minutes3"></span>minutos</li>
-                              <li><span id="seconds3"></span>segundos</li>
-                            </ul>
-                          </div>
-                        </div>
-                        <p style="padding-top: 1.12rem">
-                          <img loading="lazy" class="alignnone size-medium wp-image-281"
-                            src="images/premiumcup-logo.png" alt="" width="300" height="178"
-                            sizes="(max-width: 300px) 100vw, 300px" />
-                        </p>
-                      </div>
-                    </div>
-
-                    <!-- .et_pb_counters -->
                   </div>
                 </div>
+             
               </div>
               <div class="et_pb_section et_pb_section_2 et_hover_enabled et_pb_with_background et_section_regular">
                 <div class="et_pb_row et_pb_row_5">
                   <div
                     class="et_pb_column et_pb_column_4_4 et_pb_column_7 et_pb_css_mix_blend_mode_passthrough et-last-child">
                     <div class="et_pb_module et_pb_text et_pb_text_5 et_pb_bg_layout_light et_pb_text_align_right">
-                      <div class="et_pb_text_inner">
-                        <h2 style="text-align: left; padding-top: 2em">
-                          Nuestros servicios:
-                        </h2>
-                        <p>&nbsp;</p>
-                      </div>
+                     
                     </div>
                   </div>
                 </div>
@@ -744,9 +776,6 @@
                         </ul>
                       </div>
                     </div>
-                    <div class="et_pb_module et_pb_divider et_pb_divider_1 et_pb_divider_position_ et_pb_space">
-                      <div class="et_pb_divider_internal"></div>
-                    </div>
                   </div>
                   <div class="et_pb_column et_pb_column_1_2 et_pb_column_9 et_pb_css_mix_blend_mode_passthrough">
                     <div class="et_pb_module et_pb_text et_pb_text_7 et_pb_bg_layout_light et_pb_text_align_left">
@@ -758,18 +787,14 @@
                         </ul>
                       </div>
                     </div>
-                    <div class="et_pb_module et_pb_divider et_pb_divider_2 et_pb_divider_position_ et_pb_space">
-                      <div class="et_pb_divider_internal"></div>
-                    </div>
+                   
                   </div>
                 </div>
 
                 <div class="et_pb_row et_pb_row_9">
                   <div
                     class="et_pb_column et_pb_column_4_4 et_pb_column_15 et_pb_css_mix_blend_mode_passthrough et-last-child">
-                    <div class="et_pb_module et_pb_divider et_pb_divider_3 et_pb_divider_position_ et_pb_space">
-                      <div class="et_pb_divider_internal"></div>
-                    </div>
+                   
                   </div>
                 </div>
 
@@ -805,26 +830,20 @@
                   </div>
                 </div>
               </div>
-              <div class="et_pb_module et_pb_divider et_pb_divider_2 et_pb_divider_position_ et_pb_space">
-                <div class="et_pb_divider_internal"></div>
-              </div>
+           
+            </br>
               <div id="seven" class="feature fadeIn seven2">
                 <div>
                   <div>
                     <h1>Seven Hockey Copa Bristol Mar del Plata</h1>
 
                     <p class="description">
-                      El evento de hockey femenino mas convocante de nuestra
-                      ciudad. Participan mas de 35 clubes de todo el pais.
-                      Congrega a mas de 1800 jugadoras. Disfrutá de tu deporte
-                      favorito junto a un equipo de profesionales que te
-                      acompañarán en cada momento. Recreación con nuestro
-                      equipo de profes! Con quienes unimos fuerzas hace ya 11
-                      años. Musica, carpa de maquillaje artistico, fiesta de
-                      cierre y muchas sorpresas mas!!! No te quedes afuera.
-                      Sumate ya! Para mas informacion contactanos por
-                      Whatsapp.
-
+                      El evento de hockey femenino mas convocante de nuestra ciudad. 
+                      Participan mas de 25 clubes de todo el pais. Congrega a más de 1500 jugadoras. 
+                      Disfrutá de tu deporte favorito junto a un equipo de profesionales que te acompañarán en 
+                      cada momento. Recreación con nuestro equipo de profes! con quienes unimos 
+                      fuerzas hace ya 13 años. Musica, carpa de maquillaje artistico y muchas sorpresas mas!!! 
+                      No te quedes afuera. Sumate ya! Para mas informacion contactanos por Whatsapp.
                       <br />
                       <i>Declarado de interés deportivo por EMDER</i>
                     </p>
@@ -835,53 +854,38 @@
                   <img loading="lazy" src="./galeria/images/encuentro-seven-15.jpeg" alt="seven" />
                 </div>
               </div>
-              <div class="et_pb_module et_pb_divider et_pb_divider_2 et_pb_divider_position_ et_pb_space">
-                <div class="et_pb_divider_internal"></div>
-              </div>
-              <div id="mardelcup" class="feature fadeIn">
-                <div class="imagenes fadeRight">
-                  <img loading="lazy" src="./images/mardelcup1.jpg" alt="seven" />
-                  <img loading="lazy" src="./images/mardelcup2.jpg" alt="seven" />
-                </div>
+          
+            </br>
+
+            
+
+              <!-- .COPA MAMIS -->
+
+             
+            </br> 
+
+              <div id="premium" class="feature fadeIn fadeInC" style="opacity: 1;">
                 <div>
                   <div>
-                    <h1>MARDEL CUP - Futbol Femenino</h1>
-
-                    <p class="description">
-                      Desde DS, buscamos hacer un torneo donde puedas
-                      disfrutar de un fin de semana intenso en lo deportivo y
-                      en lo recreativo. Veni a participar de una experiencia
-                      realmente distinta. Para mas informacion contactanos por Whatsapp.
-                      <br />
-                      <i>Declarado de interés deportivo por EMDER</i>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <!-- .et_pb_section -->
-
-              <div id="premium" class="feature fadeIn">
-                <div>
-                  <div>
-                    <h1>PREMIUM CUP MAMIS HOCKEY</h1>
+                    <h1>PREMIUM CUP MAMIS HOCKEY 2026</h1>
 
                     <p class="description">
                       Para mas informacion contactanos por Whatsapp. <br>
                       Te esperamos para vivir juntos esta fiesta del hockey.
-                      <br />
+                      <br>
                       <i>Declarado de interés deportivo por EMDER</i>
                     </p>
                   </div>
                 </div>
-                <div class="imagenes fadeLeft">
-                  <img loading="lazy" src="./galeria/images/221208_2323.jpg" alt="seven" />
-                  <img loading="lazy" src="./galeria/images/221208_3038.jpg" alt="seven" />
+                <div class="imagenes fadeLeft fadeRC" style="opacity: 1;">
+                  <video src="galeria/premium.mp4" autoplay="" loop="" muted="" controls="" style="margin-top: 20px; margin-left: 100px; box-shadow: 0 0 20px rgba(0,0,0,0.3); border-radius: 10px;">
+                  </video>
                 </div>
               </div>
+
+              
               <!-- .et_pb_section -->
-              <div class="et_pb_module et_pb_divider et_pb_divider_2 et_pb_divider_position_ et_pb_space">
-                <div class="et_pb_divider_internal"></div>
-              </div>
+            </br></br>
               <div class="et_pb_row et_pb_row_11 et_hover_enabled">
                 <div
                   class="et_pb_column et_pb_column_4_4 et_pb_column_18 et_pb_css_mix_blend_mode_passthrough et-last-child">
@@ -979,10 +983,98 @@
               </div>
             </div>
 
-            <div class="et_pb_module et_pb_divider et_pb_divider_2 et_pb_divider_position_ et_pb_space">
-              <div class="et_pb_divider_internal"></div>
-              <div class="et_pb_divider_internal"></div>
-            </div>
+      <!--   <div id="" class="et_pb_section et_pb_section_1 et_hover_enabled et_section_regular a">
+                <div id="" class="et_pb_row et_pb_row_7">
+                  <div class="et_pb_column et_pb_column_4_4 et_pb_column_10 et_pb_css_mix_blend_mode_passthrough et-last-child">
+                    <div class="et_pb_module et_pb_text et_pb_text_8 et_pb_bg_layout_light et_pb_text_align_right">
+                      <div class="et_pb_text_inner">
+                        <h2 style="text-align: center">TORNEO COPA BRISTOL:</h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+         </div> -->
+
+       <!--  <div class="et_pb_section et_pb_section_2 et_hover_enabled et_pb_with_background et_section_regular">
+                <div class="et_pb_row et_pb_row_6">
+                  <div class="et_pb_column et_pb_column_1_2 et_pb_column_8 et_pb_css_mix_blend_mode_passthrough">
+                    <div class="et_pb_module et_pb_text et_pb_text_6 et_pb_bg_layout_light et_pb_text_align_left">
+                      <div class="et_pb_text_inner">
+                        <ul>
+                          <li>
+                                <a href="docs/reglamento.pdf" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    class="enlace-doc">
+                                    Reglamento del Torneo
+                                </a>
+                          </li>
+                        </br>
+                          <li>
+                                <a href="docs/categorias.pdf" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    class="enlace-doc">
+                                    Categorías
+                                </a>
+                            </li>
+                         </br>
+                          <li>
+                                <a href="docs/programa.pdf" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    class="enlace-doc">
+                                    Programa de actividades
+                                </a>
+                            </li>
+                        </ul>
+                      </div>
+                    </div>
+                  
+                  </div>
+                  <div class="et_pb_column et_pb_column_1_2 et_pb_column_9 et_pb_css_mix_blend_mode_passthrough">
+                    <div class="et_pb_module et_pb_text et_pb_text_7 et_pb_bg_layout_light et_pb_text_align_left">
+                      <div class="et_pb_text_inner">
+                        <ul>
+                                <li>
+                                    <a href="docs/alojamiento.pdf" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer" 
+                                            class="enlace-doc">
+                                            Alojamiento
+                                        </a>
+                                </li>
+                            </br>
+                                <li>
+                                    <a href="docs/clubes-2024.pdf" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer" 
+                                            class="enlace-doc">
+                                            Clubes participantes edición 2024
+                                    </a>
+                                </li>
+                            </br>
+                          <li>
+                                <a href="docs/hoteleria.pdf" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    class="enlace-doc">
+                                    Hotelería
+                                </a>
+                            </li>
+                        </ul>
+                      </div>
+                      </div>
+                    </div>
+                </div>
+        </div> -->
+        </div>
+            
+
+
+
+
+    </br>
             <!-- .et_pb_section -->
             <!-- .et_pb_section -->
             <div class="et_pb_section et_pb_section_3 et_hover_enabled et_section_regular">
@@ -990,118 +1082,10 @@
                 <div
                   class="et_pb_column et_pb_column_4_4 et_pb_column_19 et_pb_css_mix_blend_mode_passthrough et-last-child">
                   <div class="et_pb_module et_pb_text et_pb_text_17 et_pb_bg_layout_light et_pb_text_align_center">
-                    <!-- <div class="et_pb_text_inner">
-											<h2>nuestros EVENTOS</h2>
-										</div> -->
+                 
                   </div>
                 </div>
               </div>
-              <!-- <div class="et_pb_row et_pb_row_13 et_hover_enabled et_pb_equal_columns et_pb_gutters1">
-								<div
-									class="et_pb_column et_pb_column_1_3 et_pb_column_20    et_pb_css_mix_blend_mode_passthrough">
-
-
-									<div
-										class="et_pb_module et_pb_text et_pb_text_18 et_animated et_clickable et_pb_bg_layout_dark  et_pb_text_align_center">
-
-
-										<div class="et_pb_text_inner">
-											<h3>«Seven Copa Bristol Mar del Plata»</h3>
-										</div>
-									</div>
-								</div>
-								<div
-									class="et_pb_column et_pb_column_1_3 et_pb_column_21    et_pb_css_mix_blend_mode_passthrough">
-
-
-									<div
-										class="et_pb_module et_pb_text et_pb_text_19 et_animated et_clickable et_pb_bg_layout_dark  et_pb_text_align_left">
-
-
-										<div class="et_pb_text_inner">
-											<p>Seven Copa Bristol Mar del Plata, el evento de hockey femenino mas convocante de
-												nuestra ciudad. Participan mas de 35 clubes, desde Ushuaia a Salta y
-												países vecinos. Congrega a mas de 1200 jugadoras. Disfrutá de tu
-												deporte favorito junto a un equipo de profesionales que te
-												acompañarán en cada momento. Recreación con nuestro equipo
-												de Che Chiqui!! Y muchas cosas mas!!! , No te quedes afuera… Sumate
-												ya!</p>
-										</div>
-									</div>
-								</div>
-								<div
-									class="et_pb_column et_pb_column_1_3 et_pb_column_22    et_pb_css_mix_blend_mode_passthrough">
-
-
-									<div class="et_pb_module et_pb_video et_pb_video_0">
-
-
-										<div class="et_pb_video_box">
-
-											<video controls>
-												<source type="video/mp4" src="./images/seven.mp4" />
-
-											</video>
-										</div>
-
-									</div>
-								</div>
-
-
-							</div>
-							<div class="et_pb_row et_pb_row_14 et_hover_enabled et_pb_equal_columns et_pb_gutters1">
-								<div
-									class="et_pb_column et_pb_column_1_3 et_pb_column_23    et_pb_css_mix_blend_mode_passthrough">
-
-
-									<div
-										class="et_pb_module et_pb_text et_pb_text_20 et_animated et_clickable et_pb_bg_layout_dark  et_pb_text_align_center">
-
-
-										<div class="et_pb_text_inner">
-											<h3>«Torneo Convivencia»</h3>
-										</div>
-									</div>
-								</div>
-								<div
-									class="et_pb_column et_pb_column_1_3 et_pb_column_24    et_pb_css_mix_blend_mode_passthrough">
-
-
-									<div
-										class="et_pb_module et_pb_text et_pb_text_21 et_animated et_clickable et_pb_bg_layout_dark  et_pb_text_align_left">
-
-
-										<div class="et_pb_text_inner">
-											<p>Torneo Convivencia, 26 años de trayectoria hacen del Encuentro
-												Convivencia uno de los eventos deportivos  nivel escolar más
-												importantes de la ciudad. Instituciones de todo el pais participan
-												de esta jornada deportivo recreativa donde rugby, hockey y muchas
-												otras actividades generan un espacio donde todos participan y se
-												divierten . Este año no te podes quedar afuera … Te esperamos!!!!
-											</p>
-										</div>
-									</div>
-								</div>
-								<div
-									class="et_pb_column et_pb_column_1_3 et_pb_column_25    et_pb_css_mix_blend_mode_passthrough">
-
-
-									<div class="et_pb_module et_pb_video et_pb_video_1">
-
-
-										<div class="et_pb_video_box">
-
-											<video controls>
-												<source type="video/mp4" src="./images/conv.mp4" />
-
-											</video>
-										</div>
-
-									</div>
-								</div>
-
-
-							</div>  -->
             </div>
             <!-- .et_pb_section -->
             <div class="et_pb_section et_pb_section_4 et_pb_with_background et_section_regular">
@@ -1130,7 +1114,9 @@
                   <div
                     class="et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_right et_pb_module">
                     <a class="et_pb_button et_pb_button_0 et_hover_enabled et_pb_bg_layout_light"
-                      href="./galeria/index.html">Galería de Imágenes</a>
+                      target="_blank" 
+                      href="./galeria/index.html">Galería de Imágenes
+                    </a>
                   </div>
                 </div>
                 <div class="et_pb_column et_pb_column_1_4 et_pb_column_31 et_pb_css_mix_blend_mode_passthrough">
@@ -2510,13 +2496,6 @@
       padding-bottom: 5px;
     }
 
-    /* div.et_pb_section.et_pb_section_2 {
-      background-image: linear-gradient(180deg,
-          #ffffff 0%,
-          rgba(255, 255, 255, 0.86) 100%),
-        url(https://localhost:8888/divi/wp-content/uploads/2018/10/gym_10.jpg) !important;
-    } */
-
     .et_pb_text_12:hover {
       box-shadow: 0px 70px 160px -42px rgba(0, 0, 0, 0.3);
     }
@@ -3036,6 +3015,66 @@
       padding-top: 3.4rem;
     }
   </style>
+
+  <script>
+  const carousel = document.getElementById('carousel');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+  const closeBtn = document.getElementById('close-btn');
+
+  for (let i = 1; i <= 26; i++) {
+    const img = document.createElement('img');
+    img.src = `./galeria/images/fotos-2025/${i}.jpg`;
+    img.alt = `Evento ${i}`;
+    img.style.width = '300px';         // Aumentás el tamaño
+    img.style.height = 'auto';         // Mantiene proporción
+    img.style.objectFit = 'cover'; 
+    img.style.cursor = 'pointer';
+    img.style.scrollSnapAlign = 'start';
+
+    // Esquinas redondeadas
+    img.style.borderRadius = '12px';
+
+    // Transición suave para el hover
+    img.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+
+    // Evento hover para agrandar y sombra
+    img.addEventListener('mouseenter', () => {
+      img.style.transform = 'scale(1.05)';
+      img.style.boxShadow = '0 4px 15px rgba(0,0,0,0.3)';
+    });
+
+    img.addEventListener('mouseleave', () => {
+      img.style.transform = 'scale(1)';
+      img.style.boxShadow = 'none';
+    });
+
+    // Al hacer click abre la imagen en lightbox
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+
+    carousel.appendChild(img);
+  }
+
+  // Cerrar lightbox al hacer click en el botón
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+  });
+
+  // También cerrar lightbox al hacer click fuera de la imagen
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+    }
+  });
+</script>
+
+
+
 </body>
 
 </html>
