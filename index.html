@@ -2985,7 +2985,7 @@
     }
   </style>
 
-  <script>
+<script>
   const carousel = document.getElementById('carousel');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = lightbox.querySelector('img');
@@ -2993,47 +2993,47 @@
 
   for (let i = 1; i <= 29; i++) {
     const img = document.createElement('img');
+
+    // Carga miniatura optimizada (thumbnail)
     img.src = `./galeria/images/fotos-2025/${i}.jpg`;
+    img.dataset.full = `./galeria/images/fotos-2025/${i}.jpg`; // Imagen grande al hacer click
     img.alt = `Evento ${i}`;
-    img.style.width = '300px';         // Aumentás el tamaño
-    img.style.height = 'auto';         // Mantiene proporción
-    img.style.objectFit = 'cover'; 
+    img.loading = 'lazy'; // Carga diferida
+
+    // Estilos
+    img.style.width = '300px';
+    img.style.height = 'auto';
+    img.style.objectFit = 'cover';
     img.style.cursor = 'pointer';
     img.style.scrollSnapAlign = 'start';
-
-    // Esquinas redondeadas
     img.style.borderRadius = '12px';
-
-    // Transición suave para el hover
     img.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
 
-    // Evento hover para agrandar y sombra
+    // Hover
     img.addEventListener('mouseenter', () => {
       img.style.transform = 'scale(1.05)';
       img.style.boxShadow = '0 4px 15px rgba(0,0,0,0.3)';
     });
-
     img.addEventListener('mouseleave', () => {
       img.style.transform = 'scale(1)';
       img.style.boxShadow = 'none';
     });
 
-    // Al hacer click abre la imagen en lightbox
+    // Lightbox
     img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
+      lightboxImg.src = img.dataset.full;
       lightbox.style.display = 'flex';
     });
 
     carousel.appendChild(img);
   }
 
-  // Cerrar lightbox al hacer click en el botón
+  // Cerrar lightbox
   closeBtn.addEventListener('click', () => {
     lightbox.style.display = 'none';
     lightboxImg.src = '';
   });
 
-  // También cerrar lightbox al hacer click fuera de la imagen
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
       lightbox.style.display = 'none';
@@ -3041,6 +3041,7 @@
     }
   });
 </script>
+
 
 
 <!-- <script src="./js/counter.js"></script> -->
